@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro | HistoryCar</title>
+  <link rel="shortcut icon" href="ico/ChatGPT-Image-13-de-abr.-de-2025_-20_12_53.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="scss/style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body id="body2">
+  <main class="login-container" role="main">
+    <section class="login-box">
+      <div class="logo-container">
+        <a href="inicio.html"><img src="imagens/image-Photoroom - Copia.png" alt="Logo HistoryCar" /></a>
+      </div>
+
+      <h1>Cadastre-se no HistoryCar</h1>
+
+      <form aria-label="Formulário de cadastro" onsubmit="handle_submit" action="inicio.html">
+        <label for="nome">Nome completo:</label>
+        <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" required />
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="Digite seu email" required />
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" placeholder="Crie uma senha" required />
+
+        <label for="confirmar-senha">Confirmar senha:</label>
+        <input type="password" name="confirmar_senha" id="confirmar-senha" placeholder="Confirme sua senha" required />
+
+        <button type="submit">Cadastrar</button>
+      </form>
+
+      <p class="signup-link">
+        Já tem conta? <a href="pg2.html">Entrar</a>
+      </p>
+    </section>
+  </main>
+</body>
+<script>
+  const supabaseUrl = 'https://iygsnlrrboefxtzsheod.supabase.co'; 
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml5Z3NubHJyYm9lZnh0enNoZW9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk0ODg5NjMsImV4cCI6MjA2NTA2NDk2M30.cy2VRixyJxDNk9v_qt118WgN_sxjp_4eFhTOf-nrc4M'; 
+  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+  const registerForm = document.getElementById('registerForm');
+  registerForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+
+    try {
+      const { user, error } = await supabase.auth.signUp({
+        email,
+        password,
+      });
+
+      if (error) throw error;
+
+      console.log('Usuário registrado:', user);
+      alert('Cadastro realizado com sucesso! Verifique seu e-mail.');
+    } catch (error) {
+      console.error('Erro ao cadastrar:', error.message);
+      alert('Erro ao cadastrar: ' + error.message);
+    }
+  });
+</script>
+
+</html>

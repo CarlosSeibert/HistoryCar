@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+.barra .quadrado {
+  background: rgb(153, 153, 153);
+  height: 5vh;
+  width: 98.9vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: height 0.3s;
+}
+.barra #lupa {
+  background: rgb(153, 153, 153);
+  padding: 0.5%;
+  height: 6%;
+  width: 3%;
+  top: 5vh;
+  left: 0.5rem;
+  z-index: 100;
+  border-radius: 0% 0% 35% 35%;
+  transition: top 0.3s;
+}
+.barra .quadrado2 {
+  background: rgb(153, 153, 153);
+  height: 5vh;
+  width: 98.9vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: height 0.3s;
+}
+.barra #perfil {
+  background: rgb(153, 153, 153);
+  padding: 0.5%;
+  height: 6%;
+  width: 3%;
+  top: 5vh;
+  left: 0.5rem;
+  z-index: 100;
+  border-radius: 0% 0% 35% 35%;
+  transition: top 0.3s;
+}
+.barra .quadrado:hover {
+  height: 30vh;
+}
+.barra .quadrado:hover ~ #lupa {
+  top: 30vh;
+}
+
+.quadrado2 {
+  background: rgb(153, 153, 153);
+  height: 5vh;
+  width: 1vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.logo {
+  height: 60vh;
+  width: 45vw;
+}
+
+.des {
+  font-family: raleway;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  position: relative;
+  text-align: center;
+  font-size: 125%;
+  margin-top: -3rem;
+}
+
+.pimba {
+  width: 90vw;
+  height: 20vw;
+}
+
+.carrossel {
+  width: 100vw;
+  height: 20vw;
+  overflow: hidden;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.slides {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  animation: deslizar 20s linear infinite;
+  align-items: center;
+  gap: 2vw;
+}
+
+.slide {
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 15vw;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@keyframes deslizar {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+#body2 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(148, 149, 150, 0.85), rgba(255, 255, 255, 0.85)), url("img/background-car.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  width: 100%;
+  text-align: center;
+}
+
+.logo-container {
+  margin-bottom: 1.5rem;
+}
+
+.logo-container img {
+  max-width: 150px;
+  height: auto;
+}
+
+.login-box h1 {
+  margin-bottom: 1.8rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+form label {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+input[type=email],
+input[type=password] {
+  padding: 0.8rem;
+  margin-bottom: 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #00c3ff;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: #009fc4;
+}
+
+.signup-link {
+  margin-top: 1.3rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signup-link a {
+  color: #00c3ff;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+body#body2 button {
+  background-color: #32cd32;
+}
+
+body#body2 button:hover {
+  background-color: #28a428;
+}/*# sourceMappingURL=style.css.map */
